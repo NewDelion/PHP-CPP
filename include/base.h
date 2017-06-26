@@ -15,6 +15,8 @@ namespace Php {
  */
 class ObjectImpl;
 
+template <class T> class Class;
+
 
 /**
  *  Class definition
@@ -51,6 +53,12 @@ public:
      *  Virtual destructor
      */
     virtual ~Base() = default;
+
+    /**
+     *  Init Class
+     */
+    template<typename T>
+    static void Init(Class<T> &type) {}
 
     /**
      *  Get access to a property by name using the [] operator
